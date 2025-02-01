@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        #todo-list {
+            list-style-type: none;
+        }
+        #todo-list li {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Todo List</h1>
+    <input type="text" id="todo-input" placeholder="Yeni görev ekle...">
+    <button onclick="addTask()">Ekle</button>
+    <ul id="todo-list"></ul>
+
+    <script>
+        function addTask() {
+            let input = document.getElementById("todo-input").value;
+            if (input.trim() !== "") {
+                let li = document.createElement("li");
+                li.textContent = input;
+                let list = document.getElementById("todo-list");
+                list.appendChild(li);
+                document.getElementById("todo-input").value = "";
+            }
+        }
+    </script>
+</body>
+</html>
